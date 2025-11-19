@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Curriculum - Manstrual™</title>
+    <meta name="description" content="Explore the complete 8-week curriculum of Manstrual - the most comprehensive training program for men learning to support their partners through every phase of the menstrual cycle.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .curriculum-hero {
+            background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .curriculum-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .curriculum-intro {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .program-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+            padding: 3rem;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 20px;
+        }
+
+        .program-stat {
+            text-align: center;
+        }
+
+        .program-stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .program-stat-label {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        .module-section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .module-section:nth-child(even) {
+            background: var(--dark-lighter);
+        }
+
+        .module-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid rgba(99, 102, 241, 0.3);
+        }
+
+        .module-number {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .module-title-group h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .module-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-dim);
+        }
+
+        .module-overview {
+            background: var(--dark-light);
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin-bottom: 3rem;
+            border-left: 4px solid var(--primary);
+        }
+
+        .module-overview h3 {
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .module-overview p {
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .lessons-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .lesson-card {
+            background: var(--dark-light);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(99, 102, 241, 0.5);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .lesson-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .lesson-number {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(99, 102, 241, 0.2);
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            color: #A5B4FC;
+        }
+
+        .lesson-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid rgba(16, 185, 129, 0.5);
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .lesson-title {
+            font-size: 1.75rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .lesson-description {
+            color: var(--text-dim);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .key-insights {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+        }
+
+        .key-insights h4 {
+            color: var(--accent);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .key-insights ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .key-insights li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .key-insights li:before {
+            content: "💡";
+            position: absolute;
+            left: 0;
+        }
+
+        .preview-content {
+            background: rgba(99, 102, 241, 0.05);
+            border: 2px solid rgba(99, 102, 241, 0.3);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+        }
+
+        .preview-label {
+            display: inline-block;
+            background: var(--gradient-1);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .preview-content h5 {
+            color: #fff;
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+        }
+
+        .preview-content p {
+            color: var(--text);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .preview-excerpt {
+            font-style: italic;
+            color: var(--text-dim);
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--primary);
+        }
+
+        .learning-outcomes {
+            background: var(--dark-light);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+        }
+
+        .learning-outcomes h4 {
+            color: #fff;
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+        }
+
+        .learning-outcomes ul {
+            list-style: none;
+        }
+
+        .learning-outcomes li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .learning-outcomes li:last-child {
+            border-bottom: none;
+        }
+
+        .learning-outcomes li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: 900;
+            font-size: 1.25rem;
+        }
+
+        .bonus-modules {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(239, 68, 68, 0.1) 100%);
+            border: 2px solid rgba(245, 158, 11, 0.3);
+            padding: 4rem;
+            border-radius: 24px;
+            margin: 4rem 0;
+        }
+
+        .bonus-modules h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .bonus-card {
+            background: var(--dark-light);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
+        .bonus-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .resources-section {
+            background: var(--dark-lighter);
+            padding: 80px 0;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .resource-card {
+            background: var(--dark-light);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            text-align: center;
+        }
+
+        .resource-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .resource-card h3 {
+            font-size: 1.25rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .curriculum-cta {
+            background: var(--gradient-hero);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .curriculum-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .curriculum-cta p {
+            font-size: 1.25rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .program-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+                padding: 2rem;
+            }
+
+            .module-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .module-title-group h2 {
+                font-size: 2rem;
+            }
+
+            .curriculum-cta h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">MANSTRUAL™</a>
+                <a href="index.html#apply" class="nav-cta">Apply Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="curriculum-hero">
+        <div class="container">
+            <div class="curriculum-intro">
+                <h1 class="hero-title">The Complete Curriculum</h1>
+                <p class="hero-subtitle">8 weeks. 50+ research studies. The most comprehensive training program ever created for men who want to master the art of supporting their partners through every phase of the menstrual cycle.</p>
+
+                <div class="program-stats">
+                    <div class="program-stat">
+                        <div class="program-stat-number">8</div>
+                        <div class="program-stat-label">Intensive Modules</div>
+                    </div>
+                    <div class="program-stat">
+                        <div class="program-stat-number">24</div>
+                        <div class="program-stat-label">Core Lessons</div>
+                    </div>
+                    <div class="program-stat">
+                        <div class="program-stat-number">6</div>
+                        <div class="program-stat-label">Live Coaching Calls</div>
+                    </div>
+                    <div class="program-stat">
+                        <div class="program-stat-number">50+</div>
+                        <div class="program-stat-label">Academic Sources</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Module 1 -->
+    <section class="module-section">
+        <div class="container">
+            <div class="module-header">
+                <div class="module-number">01</div>
+                <div class="module-title-group">
+                    <h2>Foundations: The Biology You Never Learned</h2>
+                    <p class="module-subtitle">Week 1 • 3 Core Lessons</p>
+                </div>
+            </div>
+
+            <div class="module-overview">
+                <h3>Module Overview</h3>
+                <p>Most men have never learned the complete biological system governing the menstrual cycle. This foundational module gives you a deep understanding of the four hormones, neurological changes, and physiological patterns that drive behavior, mood, and needs across all 28 days. By the end of Week 1, you'll understand the science behind "why she's like this" - and realize it's not random at all.</p>
+            </div>
+
+            <div class="lessons-grid">
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">Lesson 1.1</span>
+                        <span class="lesson-badge">FREE PREVIEW</span>
+                    </div>
+                    <h3 class="lesson-title">The Four Hormones That Run Everything</h3>
+                    <p class="lesson-description">Discover how estrogen, progesterone, testosterone, and FSH/LH create predictable patterns of energy, mood, and behavior. Learn to map these hormones across the 28-day cycle and understand exactly what's happening at the biological level.</p>
+
+                    <div class="preview-content">
+                        <span class="preview-label">PREVIEW EXCERPT</span>
+                        <h5>Understanding Estrogen's Impact</h5>
+                        <p class="preview-excerpt">"Estrogen doesn't just affect reproduction - it's a neuromodulator that dramatically impacts mood, cognition, and behavior. When estrogen rises during the follicular phase (days 6-14), it increases dopamine receptor sensitivity, enhances serotonin production, and stimulates the hippocampus for better memory formation. This is why you'll notice her energy increasing, her mood brightening, and her communication becoming sharper during this window. It's not coincidence - it's biochemistry."</p>
+                    </div>
+
+                    <div class="key-insights">
+                        <h4>Key Research Insights:</h4>
+                        <ul>
+                            <li>208 out of 397 metabolites show significant rhythmicity across the cycle (Nature, 2018)</li>
+                            <li>Estrogen stimulates aromatase enzyme converting testosterone to estradiol</li>
+                            <li>Progesterone has catabolic effects explaining luteal phase fatigue</li>
+                            <li>Testosterone peaks at ovulation driving libido and assertiveness</li>
+                        </ul>
+                    </div>
+
+                    <div class="learning-outcomes">
+                        <h4>Learning Outcomes:</h4>
+                        <ul>
+                            <li>Identify and explain the role of all four primary hormones</li>
+                            <li>Map hormone fluctuations across the complete 28-day cycle</li>
+                            <li>Connect hormonal changes to observable behavior patterns</li>
+                            <li>Predict mood and energy shifts based on cycle phase</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">Lesson 1.2</span>
+                    </div>
+                    <h3 class="lesson-title">The Four Phases Decoded</h3>
+                    <p class="lesson-description">Master the distinct characteristics of each phase: Menstrual (Days 1-5), Follicular (Days 6-14), Ovulation (Days 14-17), and Luteal (Days 18-28). Learn what she needs in each phase and how to be the partner who "just gets it."</p>
+
+                    <div class="key-insights">
+                        <h4>Critical Phase Distinctions:</h4>
+                        <ul>
+                            <li>Menstrual Phase: Lowest energy, highest need for comfort and pain management</li>
+                            <li>Follicular Phase: Rising energy, peak time for important conversations and connection</li>
+                            <li>Ovulation: Maximum libido, confidence, and social engagement (THE intimacy window)</li>
+                            <li>Luteal Phase: Bifurcated - stable early, emotionally sensitive late (PMS window)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">Lesson 1.3</span>
+                        <span class="lesson-badge">BREAKTHROUGH RESEARCH</span>
+                    </div>
+                    <h3 class="lesson-title">Neuroscience of the Cycling Brain</h3>
+                    <p class="lesson-description">2024 brain imaging studies reveal measurable neuroplastic changes across the cycle. Understand why PMS emotions are neurologically real - amygdala reactivity increases 40%, prefrontal control decreases. This reframes "she's being emotional" from criticism to biological fact.</p>
+
+                    <div class="key-insights">
+                        <h4>2024 Neuroscience Breakthroughs:</h4>
+                        <ul>
+                            <li>Nature Neuroscience: Brain volume changes correlate with progesterone levels</li>
+                            <li>Amygdala (emotional processing) 40% more reactive during luteal phase</li>
+                            <li>Hippocampus volume fluctuates affecting memory consolidation</li>
+                            <li>Serotonin drop during PMS explains mood changes (same neurotransmitter targeted by antidepressants)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Module 2 -->
+    <section class="module-section">
+        <div class="container">
+            <div class="module-header">
+                <div class="module-number">02</div>
+                <div class="module-title-group">
+                    <h2>Psychology: Understanding Her Inner Experience</h2>
+                    <p class="module-subtitle">Week 2 • 3 Core Lessons + Live Coaching Call</p>
+                </div>
+            </div>
+
+            <div class="module-overview">
+                <h3>Module Overview</h3>
+                <p>Biology is only half the story. This module explores the psychological and emotional landscape that unfolds across the cycle. You'll learn to recognize mood patterns, cognitive shifts, and the critical window of rejection sensitivity that makes or breaks communication during PMS.</p>
+            </div>
+
+            <div class="lessons-grid">
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">Lesson 2.1</span>
+                    </div>
+                    <h3 class="lesson-title">Mood Patterns Across the Cycle</h3>
+                    <p class="lesson-description">Map the emotional trajectory from follicular optimism through ovulatory confidence to luteal sensitivity. Learn to distinguish between phase-related mood and individual personality, and recognize when shifts signal phase transitions.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">Lesson 2.2</span>
+                    </div>
+                    <h3 class="lesson-title">Cognitive Changes You'll Notice</h3>
+                    <p class="lesson-description">Research shows verbal fluency, memory, and processing speed vary by phase. Follicular/ovulatory windows optimize communication and learning. Luteal phase brings brain fog and negativity bias. Time your conversations accordingly.</p>
+
+                    <div class="key-insights">
+                        <h4>Workplace Research Findings:</h4>
+                        <ul>
+                            <li>77% report difficulty concentrating at work during specific phases</li>
+                            <li>89% report energy level impacts on productivity</li>
+                            <li>68% report reduced efficiency during menstruation and pre-menstrual phase</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">Lesson 2.3</span>
+                        <span class="lesson-badge">CRITICAL SKILL</span>
+                    </div>
+                    <h3 class="lesson-title">Sensitivity to Rejection and Criticism</h3>
+                    <p class="lesson-description">Luteal phase significantly heightens rejection sensitivity due to amygdala hyperreactivity. Learn what feels like rejection, how to deliver feedback phase-appropriately, and the communication scripts that validate instead of dismiss.</p>
+
+                    <div class="preview-content">
+                        <span class="preview-label">COMMUNICATION STRATEGY</span>
+                        <h5>The Nuclear Phrases to NEVER Say:</h5>
+                        <p>"You're overreacting" • "Calm down" • "Are you on your period?" • "You're being irrational" • "It's just hormones"</p>
+                        <h5 style="margin-top: 1.5rem;">What to Say Instead:</h5>
+                        <p class="preview-excerpt">"I can see this really matters to you. Tell me more about what you're feeling." • "This is hitting you hard. What do you need from me right now?" • "Your feelings make sense, even if I don't fully understand yet. Help me understand."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Module 3 -->
+    <section class="module-section">
+        <div class="container">
+            <div class="module-header">
+                <div class="module-number">03</div>
+                <div class="module-title-group">
+                    <h2>The Cycle-Synced Support System™</h2>
+                    <p class="module-subtitle">Week 3 • 4 Phase-Specific Lessons</p>
+                </div>
+            </div>
+
+            <div class="module-overview">
+                <h3>Module Overview</h3>
+                <p>This is where knowledge becomes action. Our proprietary Cycle-Synced Support System gives you concrete playbooks for each of the four phases - what to do, what to say, how to show up. This module transforms you from confused bystander to confident supporter.</p>
+            </div>
+
+            <div class="lessons-grid">
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">Lesson 3.1</span>
+                    </div>
+                    <h3 class="lesson-title">Menstrual Phase (Days 1-5): The Reset</h3>
+                    <p class="lesson-description"><strong>Core Principle:</strong> Comfort without smothering, support without fixing. Master the 3 Pillars: Pain Management Partnership, Anticipatory Task Relief, and Emotional Presence Without Pressure.</p>
+
+                    <div class="learning-outcomes">
+                        <h4>Practical Skills You'll Learn:</h4>
+                        <ul>
+                            <li>Stock and prepare pain relief supplies before she asks</li>
+                            <li>Take tasks OFF her plate (meal prep, errands, childcare)</li>
+                            <li>Offer physical comfort options: heating pad, massage, bath</li>
+                            <li>Navigate period sex conversations with openness and respect</li>
+                            <li>Recognize red flags requiring medical attention</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">Lesson 3.2</span>
+                    </div>
+                    <h3 class="lesson-title">Follicular Phase (Days 6-14): The Rise</h3>
+                    <p class="lesson-description"><strong>Core Principle:</strong> Engage, explore, expand together. Her energy is rising, brain is optimized, and mood is positive. This is your window for important conversations, new experiences, and deep connection.</p>
+
+                    <div class="key-insights">
+                        <h4>Opportunities in This Phase:</h4>
+                        <ul>
+                            <li>Best time for relationship check-ins and future planning</li>
+                            <li>Enhanced verbal fluency makes communication easier</li>
+                            <li>Propose new activities, trips, challenges - she'll say YES</li>
+                            <li>Support her goals and projects (motivation is high)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">Lesson 3.3</span>
+                        <span class="lesson-badge">INTIMACY PEAK</span>
+                    </div>
+                    <h3 class="lesson-title">Ovulation Phase (Days 14-17): The Peak</h3>
+                    <p class="lesson-description"><strong>Core Principle:</strong> Desire, admire, connect. Testosterone and estrogen peak. Maximum libido, confidence, and sexual receptivity. This 4-day window is THE priority for intimacy and making her feel desired.</p>
+
+                    <div class="preview-content">
+                        <span class="preview-label">INTIMACY STRATEGY</span>
+                        <h5>The Ovulation Window Playbook:</h5>
+                        <p class="preview-excerpt">"Clear your schedule. This is the 4-day window where her libido peaks, genital sensitivity maximizes, and she feels most confident in her body. Compliment her appearance. Initiate with confidence. Show desire, not just availability. Research shows women report highest sexual fantasies, masturbation frequency, and receptivity during this fertile window. Whether you're trying to conceive or simply connecting, this is THE time to prioritize sexual intimacy."</p>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">Lesson 3.4</span>
+                        <span class="lesson-badge">MOST CRITICAL</span>
+                    </div>
+                    <h3 class="lesson-title">Luteal Phase (Days 18-28): The Storm</h3>
+                    <p class="lesson-description"><strong>Core Principle:</strong> Validate, don't fix. Support, don't solve. The late luteal phase (PMS) is where most men fail. Master the 5 Pillars of PMS Mastery and learn why 80% of couple conflicts occur during this 10-day window.</p>
+
+                    <div class="key-insights">
+                        <h4>The 5 Pillars of PMS Mastery:</h4>
+                        <ul>
+                            <li><strong>Anticipatory Support:</strong> Use tracking to prepare BEFORE symptoms hit</li>
+                            <li><strong>Emotional Validation:</strong> Listen without trying to fix her feelings</li>
+                            <li><strong>Conflict De-escalation:</strong> Recognize flooding, take 20-min breaks</li>
+                            <li><strong>Physical Comfort:</strong> Offer heating pads, massage, comfort foods</li>
+                            <li><strong>Lower Expectations:</strong> This is NOT the week for deep talks or critique</li>
+                        </ul>
+                    </div>
+
+                    <div class="learning-outcomes">
+                        <h4>Critical Communication Skills:</h4>
+                        <ul>
+                            <li>The 3-Second Rule: Is this necessary? Is it kind? Would I say this to my boss?</li>
+                            <li>Safe phrases: "You're not crazy. This is real." "What do you need?"</li>
+                            <li>Forbidden phrases: "Are you on your period?" "Calm down" "You're overreacting"</li>
+                            <li>When it's PMDD (severe): Recognize symptoms requiring medical intervention</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Module 4 -->
+    <section class="module-section">
+        <div class="container">
+            <div class="module-header">
+                <div class="module-number">04</div>
+                <div class="module-title-group">
+                    <h2>Medical Conditions: Beyond "Normal" Cycles</h2>
+                    <p class="module-subtitle">Week 4 • 3 Condition-Specific Lessons + Live Coaching Call</p>
+                </div>
+            </div>
+
+            <div class="module-overview">
+                <h3>Module Overview</h3>
+                <p>5-8% of women have PMDD. 10% have endometriosis. 8-13% have PCOS. If your partner has one of these conditions, standard cycle advice isn't enough. This module provides deep dives into each condition with partner support strategies that can literally change - or save - her life.</p>
+            </div>
+
+            <div class="lessons-grid">
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">Lesson 4.1</span>
+                        <span class="lesson-badge">LIFE-SAVING INFO</span>
+                    </div>
+                    <h3 class="lesson-title">PMDD: When PMS Is Debilitating</h3>
+                    <p class="lesson-description">Premenstrual Dysphoric Disorder affects 5-8% of women with severe symptoms including suicidal ideation, rage, and complete loss of functioning. Learn to recognize PMDD, encourage treatment (SSRIs 60-75% effective), and provide crisis support.</p>
+
+                    <div class="key-insights">
+                        <h4>Critical PMDD Facts:</h4>
+                        <ul>
+                            <li>NOT "bad PMS" - it's a recognized psychiatric condition (DSM-5)</li>
+                            <li>Research shows partner support REDUCES symptom severity</li>
+                            <li>Treatment options: SSRIs (first-line), hormonal BC, therapy, lifestyle</li>
+                            <li>Symptoms must resolve within days of menstruation starting</li>
+                        </ul>
+                    </div>
+
+                    <div class="preview-content">
+                        <span class="preview-label">PARTNER PROTOCOL</span>
+                        <h5>Crisis Planning During Good Weeks:</h5>
+                        <p class="preview-excerpt">"Create a crisis plan together during her symptom-free weeks: Warning signs she's spiraling. What helps vs. what doesn't. Emergency contacts. When to seek medical help. Example agreement: 'If I say I want to hurt myself, take me to ER.' Remember: During PMDD episodes, she may say 'I hate my life' or 'I want to disappear.' This is PMDD talking, not her true self. Validate without panic: 'I know this feels unbearable right now. It will pass. You're safe.'"</p>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">Lesson 4.2</span>
+                    </div>
+                    <h3 class="lesson-title">PCOS: Polycystic Ovary Syndrome</h3>
+                    <p class="lesson-description">Irregular cycles, fertility concerns, hirsutism, weight gain, and 2-3x higher depression/anxiety rates. Learn to navigate unpredictable phases, support body image struggles, and be her advocate in dismissive medical settings.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">Lesson 4.3</span>
+                    </div>
+                    <h3 class="lesson-title">Endometriosis: Chronic Pain & Intimacy</h3>
+                    <p class="lesson-description">2/3 of women with endometriosis report sexual issues due to painful penetration. Average diagnosis takes 7-10 years due to medical gaslighting. Learn pain management support, intimacy alternatives, and how to advocate for proper treatment.</p>
+
+                    <div class="learning-outcomes">
+                        <h4>Painful Sex Solutions:</h4>
+                        <ul>
+                            <li>Communication: "Tell me immediately if anything hurts"</li>
+                            <li>Alternatives: shallow penetration positions, non-penetrative intimacy, oral sex</li>
+                            <li>Reframe intimacy as connection, not performance</li>
+                            <li>Support pelvic floor physical therapy and medical treatments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Condensed Modules 5-8 -->
+    <section class="module-section">
+        <div class="container">
+            <div class="module-header">
+                <div class="module-number">05</div>
+                <div class="module-title-group">
+                    <h2>Communication & Conflict Mastery</h2>
+                    <p class="module-subtitle">Week 5 • Gottman Method + NVC + Emotional Labor</p>
+                </div>
+            </div>
+
+            <div class="module-overview">
+                <h3>Module Overview</h3>
+                <p>Research shows 80% of couple conflicts occur during the luteal phase. This module arms you with proven de-escalation techniques, phase-appropriate communication strategies, and the framework for sharing emotional labor - the invisible work that exhausts her during PMS.</p>
+            </div>
+
+            <div class="lessons-grid">
+                <div class="lesson-card">
+                    <div class="lesson-title">Phase-Appropriate Communication</div>
+                    <p class="lesson-description">The Communication Timing Matrix: When to have important conversations (follicular), when to resolve conflicts (ovulation), and when to AVOID critique (late luteal). Includes 50+ pre-written scripts.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">De-Escalation Techniques</div>
+                    <p class="lesson-description">Gottman Method "emotional flooding" applies 3x more during PMS. Learn the 20-minute protocol, Non-Violent Communication framework, and repair attempts that prevent relationship damage.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">The Emotional Labor Conversation</div>
+                    <p class="lesson-description">Even when chores are split 50/50, women do 70% of mental load. Learn to notice, anticipate, and own domains so she's not always the project manager. During PMS, this burden feels crushing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="module-section">
+        <div class="container">
+            <div class="module-header">
+                <div class="module-number">06</div>
+                <div class="module-title-group">
+                    <h2>Intimacy & Sexuality Across the Cycle</h2>
+                    <p class="module-subtitle">Week 6 • Desire Science + Live Coaching Call</p>
+                </div>
+            </div>
+
+            <div class="module-overview">
+                <h3>Module Overview</h3>
+                <p>Her libido isn't random - it follows a predictable pattern. Days 12-17: PEAK desire. Days 23-28: LOW desire (for most). Learn responsive vs. spontaneous desire, how to navigate mismatched windows, and the intimacy strategies that deepen connection when sex isn't on the table.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="module-section">
+        <div class="container">
+            <div class="module-header">
+                <div class="module-number">07</div>
+                <div class="module-title-group">
+                    <h2>Practical Tools & Systems</h2>
+                    <p class="module-subtitle">Week 7 • Tracking + Playbooks + Nutrition</p>
+                </div>
+            </div>
+
+            <div class="module-overview">
+                <h3>Module Overview</h3>
+                <p>Build your personal support playbook with phase-specific action plans, emergency protocols, and communication scripts. Learn cycle tracking methods (apps, BBT, fertility awareness), evidence-based supplements (calcium, magnesium, B6), and nutrition strategies for each phase.</p>
+            </div>
+
+            <div class="key-insights">
+                <h4>Evidence-Based Supplement Protocol:</h4>
+                <ul>
+                    <li><strong>Calcium (1000-1200mg):</strong> Strongest evidence - 48% PMS symptom reduction</li>
+                    <li><strong>Magnesium + B6:</strong> Synergistic effect on anxiety and mood symptoms</li>
+                    <li><strong>Omega-3s:</strong> Anti-inflammatory benefits for cramps and PMDD</li>
+                    <li><strong>Vitamin D:</strong> Deficiency worsens PMS significantly</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="module-section">
+        <div class="container">
+            <div class="module-header">
+                <div class="module-number">08</div>
+                <div class="module-title-group">
+                    <h2>Advanced Topics & Long-Term Mastery</h2>
+                    <p class="module-subtitle">Week 8 • Cultural Context + Final Coaching Call</p>
+                </div>
+            </div>
+
+            <div class="module-overview">
+                <h3>Module Overview</h3>
+                <p>Combat menstrual stigma, understand how contraception affects the cycle, navigate fertility journeys, and commit to lifelong practice. Cycle awareness isn't one-time learning - it's a practice that evolves through pregnancy, postpartum, perimenopause, and beyond.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonus Modules -->
+    <section class="module-section">
+        <div class="container">
+            <div class="bonus-modules">
+                <h2>🎁 Exclusive Bonus Modules</h2>
+                <div class="bonus-grid">
+                    <div class="bonus-card">
+                        <div class="bonus-icon">📋</div>
+                        <h3>The First 30 Days Protocol</h3>
+                        <p>Week-by-week implementation guide with conversation starters, quick wins checklist, and troubleshooting for common mistakes. Know exactly what to do Day 1.</p>
+                        <div class="value-tag">Value: $497</div>
+                    </div>
+
+                    <div class="bonus-card">
+                        <div class="bonus-icon">🔥</div>
+                        <h3>Advanced Intimacy Module</h3>
+                        <p>Deep dive into female sexual response, orgasm optimization by phase, tantric cycle practices, and overcoming sexual challenges in long-term relationships.</p>
+                        <div class="value-tag">Value: $697</div>
+                    </div>
+
+                    <div class="bonus-card">
+                        <div class="bonus-icon">💬</div>
+                        <h3>1-on-1 Breakthrough Session</h3>
+                        <p>Private 60-minute coaching call to address your unique relationship dynamics, review your custom playbook, and troubleshoot specific challenges.</p>
+                        <div class="value-tag">Value: $997</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources-section">
+        <div class="container">
+            <h2 class="section-title">Included Resources & Tools</h2>
+            <p class="section-intro">Everything you need to implement immediately</p>
+
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">🆘</div>
+                    <h3>Emergency Playbooks</h3>
+                    <p>PDF downloads: "She's Crying and I Don't Know Why," "PMS De-escalation Guide," "Period Pain Crisis," "PMDD Protocol"</p>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">💬</div>
+                    <h3>Communication Scripts</h3>
+                    <p>50+ pre-written scripts for common scenarios, phase-specific language guides, conflict resolution templates</p>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">📊</div>
+                    <h3>Tracking Tools</h3>
+                    <p>Printable cycle calendar, app setup tutorials, symptom tracking spreadsheets</p>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🥗</div>
+                    <h3>Nutrition Guide</h3>
+                    <p>Phase-specific meal plans, supplement protocols, shopping lists</p>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">❤️</div>
+                    <h3>Intimacy Enhancement</h3>
+                    <p>Cycle-synced intimacy calendar, desire-building exercises, connection rituals</p>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🏥</div>
+                    <h3>Medical Resources</h3>
+                    <p>Specialist finder (PMDD, endo, PCOS doctors), symptom checkers, when-to-seek-help guidelines</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="curriculum-cta">
+        <div class="container">
+            <h2>Ready to Master This?</h2>
+            <p>This isn't theory. This is the complete system for becoming the partner she needs across all 28 days, backed by 50+ academic studies and proven with 2,847+ men.</p>
+            <a href="index.html#apply" class="cta-button cta-primary cta-large">Apply for December Cohort</a>
+            <p class="cta-subtext">Only 7 spots remaining • Starts December 2nd • 30-Day Guarantee</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">MANSTRUAL™</div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="curriculum.html">Curriculum</a>
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                </div>
+                <p class="footer-copy">&copy; 2025 Manstrual. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
